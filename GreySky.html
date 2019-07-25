@@ -19,9 +19,14 @@
         <!-- main css -->
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/responsive.css">
+        <script src="TemplateData/UnityProgress.js"></script>
+        <script src="Build/UnityLoader.js"></script>
+        <script>
+          var unityInstance = UnityLoader.instantiate("unityContainer", "Build/Builds.json", {onProgress: UnityProgress});
+        </script>
     </head>
     <body>
-        
+
         <!--================Header Menu Area =================-->
         <header class="header_area">
             <div class="main_menu">
@@ -37,34 +42,34 @@
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 							<ul class="nav navbar-nav menu_nav ml-auto">
-								<li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li> 
+								<li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
 								<li class="nav-item"><a class="nav-link" href="Resume.pdf">Resume</a></li>
 								<li class="nav-item submenu dropdown">
 									<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projects</a>
 									<ul class="dropdown-menu">
 										<li class="nav-item"><a class="nav-link" href="portfolio.html">GreySky</a></li>
 									</ul>
-								</li> 
-								<li class="nav-item"><a class="nav-link" href="aboutme.html">About me</a></li>	
+								</li>
+								<li class="nav-item"><a class="nav-link" href="aboutme.html">About me</a></li>
 								<!--<li class="nav-item"><a class="nav-link" href="about-us.html">About me</a></li>-->
-								<!--<li class="nav-item"><a class="nav-link" href="services.html">Services</a></li> 
+								<!--<li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
 								<li class="nav-item submenu dropdown">
 									<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages</a>
 									<ul class="dropdown-menu">
 										<li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
 										<li class="nav-item"><a class="nav-link" href="elements.html">Elements</a></li>
 									</ul>
-								</li> 
+								</li>
 								<li class="nav-item submenu dropdown">
 									<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
 									<ul class="dropdown-menu">
 										<li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
 										<li class="nav-item"><a class="nav-link" href="single-blog.html">Blog Details</a></li>
 									</ul>
-								</li> 
+								</li>
 								<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>-->
 							</ul>
-						</div> 
+						</div>
 					</div>
             	</nav>
             </div>
@@ -75,17 +80,25 @@
 				<div class="banner_inner d-flex align-items-center">
 					<div class="container">
 						<div class="banner_content text-center">
-							<h2>Grey Sky (WIP)</h2>
+              <h2>Grey Sky (WIP)</h2>
 							<h3> A 2D Top Down RPG with Procedurally generated elements</h3>
 						</div>
 					</div>
+          <div class="webgl-content">
+            <div id="unityContainer" style="width: 960px; height: 600px"></div>
+            <div class="footer">
+              <div class="webgl-logo"></div>
+              <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
+              <div class="title">GreySky</div>
+            </div>
+          </div>
 				</div>
             </div>
         </section>
         <!--================Home Banner Area =================--
         <section class="home_banner_area">
            	<div class="container box_1620">
-           		<div class="banner_inner d-flex align-items-center">wip
+           		<div class="banner_inner d-flex align-items-center">
 					<div class="banner_content">
 						<div class="media">
 							<div class="d-flex">
@@ -120,7 +133,7 @@
             </div>
         </section>
         <!--================End Home Banner Area =================-->
-        
+
         <!--================Welcome Area =================--
         <section class="welcome_area p_120">
         	<div class="container">
@@ -204,7 +217,7 @@
         	</div>
         </section>
         <!--================End Welcome Area =================-->
-        
+
         <!--================My Tabs Area =================--
         <section class="mytabs_area p_120">
         	<div class="container">
@@ -303,7 +316,7 @@
         	</div>
         </section>
         <!--================End My Tabs Area =================-->
-        
+
         <!--================Feature Area =================--
         <section class="feature_area p_120">
         	<div class="container">
@@ -337,7 +350,7 @@
         	</div>
         </section>
         <!--================End Feature Area =================-->
-        
+
         <!--================Home Gallery Area =================--
         <section class="home_gallery_area p_120">
         	<div class="container">
@@ -436,7 +449,7 @@
         	</div>
         </section>
         <!--================End Home Gallery Area =================-->
-        
+
         <!--================Testimonials Area =================--
         <section class="testimonials_area p_120">
         	<div class="container">
@@ -484,12 +497,12 @@
         	</div>
         </section>
         <!--================End Testimonials Area =================-->
-        
+
         <!--================Footer Area =================-->
         <footer class="footer_area p_120">
         	<div class="container">
         		<div class="row footer_inner">
-        		
+
         			<!--<div class="col-lg-5 col-sm-6">
         				<aside class="f_widget news_widget">
         					<div class="f_title">
@@ -500,8 +513,8 @@
                                 <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscribe_form relative">
                                 	<div class="input-group d-flex flex-row">
                                         <input name="EMAIL" placeholder="Enter email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email Address '" required="" type="email">
-                                        <button class="btn sub-btn"><span class="lnr lnr-arrow-right"></span></button>		
-                                    </div>				
+                                        <button class="btn sub-btn"><span class="lnr lnr-arrow-right"></span></button>
+                                    </div>
                                     <div class="mt-10 info"></div>
                                 </form>
                             </div>
@@ -520,10 +533,10 @@
         					</div>
         					<p>Let us be social</p>
         					<ul class="list">
-        						
+
         						<li></li>
         						<li><a href="https://www.facebook.com/shubhampriyadarshi42"><i class="fa fa-facebook"></i></a></li>
-        						
+
 
         						<li><a href="https://twitter.com/Truc1f3r/"><i class="fa fa-twitter"></i></a></li>
         					</ul>
@@ -544,12 +557,12 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script><br>Al
         	</div>
         </footer>
         <!--================End Footer Area =================-->
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="js/jquery-3.3.1.min.js"></script>
